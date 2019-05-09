@@ -85,12 +85,6 @@
     <Compile Include="frmCustomPayload.Designer.cs">
       <DependentUpon>frmCustomPayload.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomPayload2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCustomPayload2.Designer.cs">
-      <DependentUpon>frmCustomPayload2.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmFieldStat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,9 +117,6 @@
     <Compile Include="Template.cs" />
     <EmbeddedResource Include="frmCustomPayload.resx">
       <DependentUpon>frmCustomPayload.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomPayload2.resx">
-      <DependentUpon>frmCustomPayload2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDataClean.resx">
       <DependentUpon>frmDataClean.cs</DependentUpon>
@@ -167,8 +158,6 @@
     </Content>
     <Content Include="templates.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="test\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

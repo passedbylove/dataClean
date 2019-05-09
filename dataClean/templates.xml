@@ -2,33 +2,57 @@
 <templates>
   <template>
     <name>phone+</name>
-    <sql>
+    <!--占位符 https://www.cnblogs.com/Jinglecat/archive/2007/07/18/823169.html 
+	{} -->{{}}
+    {{}} --> {{{}}}
+    c# string加@
+    中国电话'^((\\+?86)|(\(\\+86\)))?[0-9]{3,4}-[0-9]{7,8}(-\\d{3,4})?$'
+    -->
+    <!--<sql>
       <![CDATA[
       SELECT 
         case (
-		        SUBSTR(`{0}`, 3) REGEXP '^1[3|4|5|7|8|9][0-9]{9}$'
+		        SUBSTR(`{2}`, 3) REGEXP '^1[3|4|5|7|8|9][0-9]{{9}}$'
 	        )
         when 1 THEN
         CONCAT(
-		        "update `{1}`.`{2}` set `{3}`",		
-		        "='" ,SUBSTR(`{4}`, 3), "' where `{5}`='",
-		        {6},
+		        "update `{0}`.`{1}` set `{2}`",
+		        "='" ,SUBSTR(`{2}`, 3), "' where `{2}`='",
+		        `{2}`,
 		        "';"
 	        )
         when 0 THEN
         CONCAT(
-		        "update `{7}`.`{8}` set `{9}`",		
-		        "=null where `{10}`='",
-		        {11},
+		        "update `{0}`.`{1}` set `{2}`",
+		        "=null where `{2}`='",
+		        `{2}`,
 		        "';"
 	        )
         END forupdate
         FROM
-	        `{12}`.`{13}`
+	        `{0}`.`{1}`
         WHERE
-	        `{14}` LIKE '86%'
-        AND LENGTH(`{15}`) = 13;
+	        `{2}` LIKE '86%'
+        AND LENGTH(`{2}`) = 13;
       ]]>
+    </sql>-->
+    <sql>
+      <![CDATA[
+		SELECT
+		CONCAT(
+			"update `{0}`.`{1}` set `{2}`",
+			"='",
+			SUBSTR(`{2}`,(LENGTH(`{2}`)- 11)+1),
+			"' where `{2}`='",
+			`{2}`,
+			"'"
+			) forupdate
+		FROM
+			`{0}`.`{1}`
+		WHERE
+			LENGTH(`{2}`) > 11
+		AND `{2}` REGEXP '^((\\+86)|(86))?[1][3|4|5|7|8|9][0-9]{{9}}$'
+	]]>
     </sql>
   </template>
 </templates>
