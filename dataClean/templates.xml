@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<templates>
+  <template>
+    <name>phone+</name>
+    <sql>
+      <![CDATA[
+      SELECT 
+        case (
+		        SUBSTR(`{0}`, 3) REGEXP '^1[3|4|5|7|8|9][0-9]{9}$'
+	        )
+        when 1 THEN
+        CONCAT(
+		        "update `{1}`.`{2}` set `{3}`",		
+		        "='" ,SUBSTR(`{4}`, 3), "' where `{5}`='",
+		        {6},
+		        "';"
+	        )
+        when 0 THEN
+        CONCAT(
+		        "update `{7}`.`{8}` set `{9}`",		
+		        "=null where `{10}`='",
+		        {11},
+		        "';"
+	        )
+        END forupdate
+        FROM
+	        `{12}`.`{13}`
+        WHERE
+	        `{14}` LIKE '86%'
+        AND LENGTH(`{15}`) = 13;
+      ]]>
+    </sql>
+  </template>
+</templates>

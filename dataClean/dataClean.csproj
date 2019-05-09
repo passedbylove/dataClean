@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E17D9968-FF81-48CD-81EE-C79665FE3AE5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>dataClean</RootNamespace>
+    <AssemblyName>dataClean</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Mirabeau.MySql.Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=15c121043ee5c025, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>mysql\Mirabeau.MySql.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirabeau.Sql, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d6b773a37774738, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>mysql\Mirabeau.Sql.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>mysql\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ChnCharInfo">
+      <HintPath>..\packages\Microsoft.International.Converters.PinYinConverter.1.0.0\lib\ChnCharInfo.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Category.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="CustomPayload.cs" />
+    <Compile Include="EscapeCharacter.cs" />
+    <Compile Include="FieldStat.cs" />
+    <Compile Include="frmCustomPayload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomPayload.Designer.cs">
+      <DependentUpon>frmCustomPayload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomPayload2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomPayload2.Designer.cs">
+      <DependentUpon>frmCustomPayload2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFieldStat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFieldStat.Designer.cs">
+      <DependentUpon>frmFieldStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransfer.Designer.cs">
+      <DependentUpon>frmTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HexadecimalEncoding.cs" />
+    <Compile Include="MySqlHexDecimalEncoding.cs" />
+    <Compile Include="Payload.cs" />
+    <Compile Include="Replacement.cs" />
+    <Compile Include="Schema.cs" />
+    <Compile Include="frmDataClean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDataClean.Designer.cs">
+      <DependentUpon>frmDataClean.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySQLHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table.cs" />
+    <Compile Include="TaskScheduler.cs" />
+    <Compile Include="TaskWrapper.cs" />
+    <Compile Include="Template.cs" />
+    <EmbeddedResource Include="frmCustomPayload.resx">
+      <DependentUpon>frmCustomPayload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomPayload2.resx">
+      <DependentUpon>frmCustomPayload2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDataClean.resx">
+      <DependentUpon>frmDataClean.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFieldStat.resx">
+      <DependentUpon>frmFieldStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransfer.resx">
+      <DependentUpon>frmTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TestCrypt.cs" />
+    <None Include="packages.config" />
+    <Compile Include="Cryptor.cs" />
+    <Compile Include="CryptFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="payloads.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="templates.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="test\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

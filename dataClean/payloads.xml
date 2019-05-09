@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<payloads>
+  <payload>
+    <name>invalid to null</name>
+    <from>undefined</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>blank</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>无</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>-------------</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>----------------------</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>---------</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>待定</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>-</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>。</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from> </from>
+    <!--半角0x20-->
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>　</from>
+    <!--全角0xE38080-->
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <!--注意全角的空格https://stackoverflow.com/questions/10862975/how-to-put-space-character-into-a-string-name-in-xml-->
+  <payload>
+    <name>invalid to null</name>
+    <from>&#160;</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>&#032;</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>&#x20;</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>&#x2009;</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>&#x200A;</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>.</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>.</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>.</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>、</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>,</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>(null)</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>&lt;blank&gt;</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>NULL</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>×</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>invalid to null</name>
+    <from>X</from>
+    <match>full</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>trim</name>
+    <from>ltrim</from>
+    <match>trim</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>trim</name>
+    <from>rtrim</from>
+    <match>trim</match>
+    <category>all</category>
+  </payload>
+  <payload>
+    <name>replace</name>
+    <from>—</from>
+    <match>replace</match>
+    <category>phone</category>
+  </payload>
+  <payload>
+    <name>replace</name>
+    <from>`</from>
+    <match>replace</match>
+    <category>phone</category>
+  </payload>
+  <payload>
+    <name>replace</name>
+    <from>:</from>
+    <match>replace</match>
+    <category>phone</category>
+  </payload>
+  <payload>
+    <name>replace</name>
+    <from>一</from>
+    <match>replace</match>
+    <category>phone</category>
+  </payload>
+  <payload>
+    <name>replace</name>
+    <from>--</from>
+    <match>replace</match>
+    <category>phone</category>
+  </payload>
+  <payload>
+    <name>replace</name>
+    <from>---</from>
+    <match>replace</match>
+    <category>phone</category>
+  </payload>
+</payloads>
